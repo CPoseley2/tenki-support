@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Tenki setup and troubleshooting
+    url: https://cposeley2.github.io/tenki-support/#troubleshooting
+    about: Review common connection and permission fixes before opening a request.

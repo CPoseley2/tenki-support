@@ -1,0 +1,61 @@
+name: Tenki support request
+description: Get help with Tenki, report a bug, or share feedback.
+title: "[Support] "
+labels:
+  - support
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contacting Tenki support. Please avoid including passwords, private documents, or other sensitive information.
+  - type: dropdown
+    id: request-type
+    attributes:
+      label: What can we help with?
+      options:
+        - Connection or discovery
+        - Trackpad
+        - Keypad
+        - Keyboard
+        - Theme or appearance
+        - Bug report
+        - Feature request
+        - Privacy question
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: iphone
+    attributes:
+      label: iPhone model and iOS version
+      placeholder: "Example: iPhone 16 Pro, iOS 18.5"
+    validations:
+      required: true
+  - type: input
+    id: mac
+    attributes:
+      label: Mac model and macOS version
+      placeholder: "Example: MacBook Pro, macOS 15.5"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Tell us what you expected, what happened instead, and any steps that reliably reproduce the issue.
+      placeholder: Describe the issue here.
+    validations:
+      required: true
+  - type: textarea
+    id: troubleshooting
+    attributes:
+      label: What have you already tried?
+      placeholder: Include any connection, permission, restart, or network checks you completed.
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Quick checks
+      options:
+        - label: Tenki and TenkiMac are open on devices connected to the same local network.
+        - label: Tenki has Local Network permission on iPhone.
+        - label: TenkiMac has Accessibility permission on Mac.
