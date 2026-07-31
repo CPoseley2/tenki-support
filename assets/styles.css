@@ -60,6 +60,7 @@ a {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 .skip-link {
@@ -285,6 +286,8 @@ h2 span {
   position: relative;
   z-index: 1;
   width: 100%;
+  aspect-ratio: 632 / 1367;
+  object-fit: contain;
   border: 1px solid rgba(255, 255, 255, 0.17);
   border-radius: 48px;
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.55);
@@ -459,6 +462,11 @@ h2 span {
 
 .surface-card img {
   width: min(88%, 275px);
+  height: auto;
+  aspect-ratio: 632 / 1367;
+  object-fit: contain;
+  align-self: start;
+  justify-self: center;
   margin: 24px auto -22%;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 30px;
