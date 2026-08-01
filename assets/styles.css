@@ -158,6 +158,11 @@ nav a[aria-current="page"] {
   border-radius: 999px;
 }
 
+.nav-status {
+  color: var(--text);
+  cursor: default;
+}
+
 main,
 footer {
   width: min(calc(100% - 40px), var(--max));
@@ -222,6 +227,35 @@ h2 span {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+.pending-button {
+  cursor: default;
+}
+
+.launch-price {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  margin: 18px 0 0;
+  color: var(--text);
+  font: 700 0.82rem/1.4 var(--mono);
+}
+
+.launch-price > span {
+  padding: 5px 8px;
+  color: #081015;
+  background: var(--signal);
+  border-radius: 6px;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+}
+
+.launch-price small {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 500;
 }
 
 .button {
@@ -798,6 +832,139 @@ footer p {
   font-size: 1.08rem;
 }
 
+.press-main {
+  max-width: 1180px;
+}
+
+.press-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.4fr);
+  gap: 70px;
+  align-items: center;
+  min-height: 660px;
+  padding: 80px 0 100px;
+}
+
+.press-hero h1 {
+  margin-bottom: 24px;
+}
+
+.press-hero > div > p:not(.eyebrow) {
+  max-width: 650px;
+  color: var(--muted);
+  font-size: 1.2rem;
+}
+
+.press-mark {
+  width: min(100%, 330px);
+  border-radius: 27%;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.48), 0 0 90px rgba(116, 216, 232, 0.13);
+}
+
+.press-facts,
+.press-copy,
+.press-assets {
+  padding: 100px 0;
+  border-top: 1px solid var(--line);
+}
+
+.fact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  margin: 0;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+}
+
+.fact-grid div {
+  display: grid;
+  gap: 8px;
+  min-height: 130px;
+  padding: 24px;
+  background: var(--bg-soft);
+}
+
+.fact-grid dt,
+.press-copy article > span {
+  color: var(--accent);
+  font: 700 0.68rem/1.3 var(--mono);
+  letter-spacing: 0.12em;
+}
+
+.fact-grid dd {
+  align-self: end;
+  margin: 0;
+  font-weight: 700;
+}
+
+.press-copy article {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 760px);
+  gap: 36px;
+  padding: 30px 0;
+  border-top: 1px solid var(--line);
+}
+
+.press-copy article p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.asset-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.asset-grid a {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  padding: 14px;
+  text-decoration: none;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  transition: transform 160ms ease, border-color 160ms ease;
+}
+
+.asset-grid a:hover,
+.asset-grid a:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--line-strong);
+}
+
+.asset-grid img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  background: #090d12;
+  border-radius: 13px;
+}
+
+.asset-grid strong {
+  margin-top: 4px;
+}
+
+.asset-grid small {
+  color: var(--muted);
+  font: 0.68rem/1.4 var(--mono);
+}
+
+.asset-grid .wide-asset {
+  grid-column: span 5;
+}
+
+.asset-grid .wide-asset img {
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
 @media (max-width: 900px) {
   nav a:not(.nav-cta) {
     display: none;
@@ -821,6 +988,32 @@ footer p {
 
   .hero-device {
     width: min(72vw, 340px);
+  }
+
+  .press-hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .press-hero > div {
+    display: grid;
+    justify-items: center;
+  }
+
+  .press-mark {
+    justify-self: center;
+  }
+
+  .fact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .asset-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .asset-grid .wide-asset {
+    grid-column: span 2;
   }
 
   .surface-grid {
@@ -891,6 +1084,25 @@ footer p {
   .hero {
     min-height: auto;
     padding: 64px 0 80px;
+  }
+
+  .press-hero {
+    min-height: auto;
+    padding: 80px 0;
+  }
+
+  .press-copy article {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .fact-grid,
+  .asset-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .asset-grid .wide-asset {
+    grid-column: span 1;
   }
 
   h1 {
